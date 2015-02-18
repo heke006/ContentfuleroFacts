@@ -1,0 +1,51 @@
+PODS:
+  - AFNetworking (2.5.1):
+    - AFNetworking/NSURLConnection (= 2.5.1)
+    - AFNetworking/NSURLSession (= 2.5.1)
+    - AFNetworking/Reachability (= 2.5.1)
+    - AFNetworking/Security (= 2.5.1)
+    - AFNetworking/Serialization (= 2.5.1)
+    - AFNetworking/UIKit (= 2.5.1)
+  - AFNetworking/NSURLConnection (2.5.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.5.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.5.1)
+  - AFNetworking/Security (2.5.1)
+  - AFNetworking/Serialization (2.5.1)
+  - AFNetworking/UIKit (2.5.1):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - ContentfulDeliveryAPI (1.4.9):
+    - AFNetworking
+    - ISO8601DateFormatter
+  - ContentfulPersistence (0.1.0):
+    - ContentfulDeliveryAPI (~> 1.4.7)
+  - ISO8601DateFormatter (0.7)
+  - Keys (1.0.1)
+
+DEPENDENCIES:
+  - ContentfulPersistence
+  - Keys (from `https://github.com/ashfurrow/empty-podspec.git`)
+
+EXTERNAL SOURCES:
+  Keys:
+    :git: https://github.com/ashfurrow/empty-podspec.git
+
+CHECKOUT OPTIONS:
+  Keys:
+    :commit: 31e65aac9132fc0e0080ee436b3415c51fb88a52
+    :git: https://github.com/ashfurrow/empty-podspec.git
+
+SPEC CHECKSUMS:
+  AFNetworking: 8bee59492a6ff15d69130efa4d0dc67e0094a52a
+  ContentfulDeliveryAPI: 25b438355f4ea9bebde31189e50c4a2dd0d90921
+  ContentfulPersistence: 9c7117962b4cf9a069756639d3275ecf7cee0364
+  ISO8601DateFormatter: 59731cd880cf87e71b4fa95f0d6b713dcbc4cbce
+  Keys: 145fc8d34340590e7a17ae4369b8440c5a97908c
+
+COCOAPODS: 0.36.0.beta.2

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14D72i" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Asset" representedClassName="ContentfuleroFacts.Asset" syncable="YES">
+        <attribute name="height" optional="YES" attributeType="Float" syncable="YES"/>
+        <attribute name="identifier" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="internetMediaType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="width" optional="YES" attributeType="Float" syncable="YES"/>
+    </entity>
+    <entity name="Beacon" representedClassName="ContentfuleroFacts.Beacon" syncable="YES">
+        <attribute name="identifier" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="major" optional="YES" attributeType="Integer 64" syncable="YES"/>
+        <attribute name="minor" optional="YES" attributeType="Integer 64" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="beaconInverse" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Fact" inverseName="beacon" inverseEntity="Fact" syncable="YES"/>
+    </entity>
+    <entity name="Fact" representedClassName="ContentfuleroFacts.Fact" syncable="YES">
+        <attribute name="fact" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="identifier" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="beacon" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Beacon" inverseName="beaconInverse" inverseEntity="Beacon" syncable="YES"/>
+    </entity>
+    <entity name="SyncInfo" representedClassName="ContentfuleroFacts.SyncInfo" syncable="YES">
+        <attribute name="lastSyncTimestamp" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="syncToken" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Asset" positionX="0" positionY="0" width="128" height="118"/>
+        <element name="Beacon" positionX="0" positionY="0" width="128" height="133"/>
+        <element name="Fact" positionX="0" positionY="0" width="128" height="103"/>
+        <element name="SyncInfo" positionX="0" positionY="0" width="128" height="73"/>
+    </elements>
+</model>

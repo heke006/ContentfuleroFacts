@@ -15,5 +15,6 @@ class Fact: NSManagedObject, CDAPersistedEntry {
     @NSManaged var identifier: String
     @NSManaged var title: String
     @NSManaged var beacon: Beacon
+    @NSManaged var backgroundImage: Asset
 
 }

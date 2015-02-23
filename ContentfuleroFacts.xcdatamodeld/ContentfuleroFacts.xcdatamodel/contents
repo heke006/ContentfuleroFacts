@@ -6,6 +6,7 @@
         <attribute name="internetMediaType" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="width" optional="YES" attributeType="Float" syncable="YES"/>
+        <relationship name="backgroundImage_3Fu5J8b6JOKkgkY2CwIo6E_Inverse" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Fact" inverseName="backgroundImage" inverseEntity="Fact" syncable="YES"/>
     </entity>
     <entity name="Beacon" representedClassName="ContentfuleroFacts.Beacon" syncable="YES">
         <attribute name="identifier" optional="YES" attributeType="String" syncable="YES"/>
@@ -19,6 +20,7 @@
         <attribute name="fact" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="identifier" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="backgroundImage" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Asset" inverseName="backgroundImage_3Fu5J8b6JOKkgkY2CwIo6E_Inverse" inverseEntity="Asset" syncable="YES"/>
         <relationship name="beacon" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Beacon" inverseName="beaconInverse" inverseEntity="Beacon" syncable="YES"/>
     </entity>
     <entity name="SyncInfo" representedClassName="ContentfuleroFacts.SyncInfo" syncable="YES">
@@ -26,9 +28,9 @@
         <attribute name="syncToken" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Asset" positionX="0" positionY="0" width="128" height="118"/>
-        <element name="Beacon" positionX="0" positionY="0" width="128" height="133"/>
-        <element name="Fact" positionX="0" positionY="0" width="128" height="103"/>
+        <element name="Asset" positionX="0" positionY="0" width="128" height="135"/>
+        <element name="Beacon" positionX="0" positionY="0" width="128" height="135"/>
+        <element name="Fact" positionX="0" positionY="0" width="128" height="120"/>
         <element name="SyncInfo" positionX="0" positionY="0" width="128" height="73"/>
     </elements>
 </model>

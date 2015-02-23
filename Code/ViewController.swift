@@ -32,13 +32,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 alert.show()
             }
 
-            let asset = self.dataManager.manager.fetchAssetsFromDataStore().first as Asset
-            let scale = UIScreen.mainScreen().nativeScale
-            let size = CGSize(width: self.imageView.frame.size.width * scale, height: self.imageView.frame.size.height * scale)
-
-            self.imageView.offlineCaching_cda = true
-            self.imageView.cda_setImageWithPersistedAsset(asset, client: self.dataManager.client, size: size, placeholderImage: nil)
-
             self.beacons = (self.dataManager.manager.fetchEntriesOfContentTypeWithIdentifier(ContentfulDataManager.BeaconContentTypeId, matchingPredicate: nil) as [Beacon])
             self.regions = self.beacons.map({ (beacon) -> CLBeaconRegion in
                     //NSLog("Will range beacon %@ with major %@, minor %@", beacon.name, beacon.major, beacon.minor)
@@ -72,7 +65,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 
             if (filteredBeacons.count > 0 && content.count > 0) {
                 let randomIndex = Int(arc4random_uniform(UInt32(content.count)))
-                factLabel.text = content[randomIndex].fact
+                factLabel.text = String(format:"%@\n\nBeacon: %@, Accuracy: %.2fm", content[randomIndex].fact, beacon.name, (beacons.first as CLBeacon).accuracy)
+
+                let scale = UIScreen.mainScreen().nativeScale
+                let size = CGSize(width: self.imageView.frame.size.width * scale, height: self.imageView.frame.size.height * scale)
+
+                self.imageView.offlineCaching_cda = true
+                self.imageView.cda_setImageWithPersistedAsset(content[randomIndex].backgroundImage, client: self.dataManager.client, size: size, placeholderImage: nil)
             }
     }
 }
